@@ -26,3 +26,13 @@ def test_CanCalculateTotalDiscount(invoice, products):
 def test_CanCalculateTotalPurePrice(invoice, products):
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
+
+
+def test_CanAddProduct(invoice, products):
+    invoice.addProduct(3, 5.25, 25)
+    assert invoice.addProduct(3, 5.25, 25) == {'qnt': 3, 'unit_price': 5.25, 'discount': 25}
+
+
+def test_CanCalculateTotalDiscountPercent(invoice, products):
+    invoice.totalDiscountPercent(products)
+    assert invoice.totalDiscountPercent(products) == 7.49
